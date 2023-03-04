@@ -16,4 +16,4 @@ Show user geolocation data
 ## PITURES
 
 ![App Screenshot](/Screenshot%20from%202023-03-04%2012-44-05.png?text=App+Screenshot+Here)
-![App Screenshot](/Screenshot%20from%202023-03-04%2012-44-38.pngtext=App+Screenshot+Here)
+![App Screenshot](/Screenshot%20from%202023-03-04%2012-44-38.png?text=App+Screenshot+Here)
