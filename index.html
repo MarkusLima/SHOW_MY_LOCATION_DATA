@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <body style="background-color: black; color: aliceblue;">
+    <ul id="myULContainer"></ul>
+    <script type="application/javascript" src="https://cdn.rawgit.com/Alorel/console-log-html/master/console-log-html.min.js"></script>
+    <script>
+        ConsoleLogHTML.connect(document.getElementById("myULContainer")); // Redirect log messages
+    </script>
+    <script>
+
+      if (navigator.geolocation) {
+
+       init();
+
+      } else {
+
+        console.log('Seu browser não suporta Geolocalização."');  
+
+      }
+
+      function preencherDados(dados) {
+        console.log(dados);  
+      }
+
+      function init(){
+        navigator.geolocation.getCurrentPosition(function(posicao) {
+
+          try {
+
+            var url = "http://nominatim.openstreetmap.org/reverse?lat="+posicao.coords.latitude+"&lon="+posicao.coords.longitude+"&format=json&json_callback=preencherDados";
+
+            var script = document.createElement('script');
+            script.src = url;
+            document.body.appendChild(script);
+            
+          } catch (error) {
+
+            console.log(error);  
+
+          }
+
+        });
+      }
+
+    </script>
+  </body>
+</html>
